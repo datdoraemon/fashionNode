@@ -14563,7 +14563,7 @@ footer {
   margin-top: 35px; }
   .tt-blog-thumb .tt-img {
     text-align: center; }
-    .tt-blog-thumb .tt-img img {
+    .tt-blog-thumb .tt-img .img {
       max-width: 100%;
       height: auto; }
   .tt-blog-thumb .tt-img + .tt-title-description {
