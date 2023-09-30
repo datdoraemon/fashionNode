@@ -181,13 +181,10 @@
 											<div class="tt-cart-btn">
 												<% if(session.cart.numItems != 0){ %>
 													<div class="tt-item">
-													<%if (typeof(user) !== 'undefined' && user.isAuthenticated) { %>
+													<%if (typeof(user) !== 'undefined') { %>
 													<a href="/add-order" class="btn">Chuyển đến thanh toán</a>
-													<% }else if(typeof(user) == 'undefined'){ %>
+													<% }else{ %>
 														<a href="/login" class="btn">Đăng nhập để thanh toán</a>
-														
-														<% }else if(typeof(user) !== 'undefined' && !user.isAuthenticated){ %>
-															<a href="/verify-email" class="btn">Kích hoạt email để thanh toán</a>
 															<% } %>
 												</div>
 													<% } %>
@@ -220,9 +217,7 @@
 												<% if(user.isAuthenticated) {%>
 												<li><a href="/shopping_cart"><i class="icon-f-68"></i>Thanh toán</a></li>
 												<% } %>
-												<% if(!user.isAuthenticated) {%>
-													<li><a href="/verify-email"><i class="icon-f-68"></i>Xác thực email</a></li>
-												<% }} %>
+												<% } %>
 									    
 										
 										

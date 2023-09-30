@@ -54,58 +54,6 @@
 																data-text="Shop Now!">Mua sắm ngay!</a></div>
 													</div>
 												</li>
-												<!-- <li data-thumb="video/video_img.jpg" data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-saveperformance="off"  data-title="Slide">
-									<img src="video/blank.png"  alt="slide1"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" >
-									
-									<div class="tp-caption tp-fade fadeout fullscreenvideo"
-										data-x="0"
-										data-y="0"
-										data-speed="600"
-										data-start="0"
-										data-easing="Power4.easeOut"
-										data-endspeed="1500"
-										data-endeasing="Power4.easeIn"
-										data-autoplay="true"
-										data-autoplayonlyfirsttime="false"
-										data-nextslideatend="true"
-										data-forceCover="1"
-										data-dottedoverlay="twoxtwo"
-										data-aspectratio="16:9">
-										<video class="video-js vjs-default-skin" preload="none"
-											poster='video/video_img.jpg' data-setup="{}">
-											<source src='video/video.mp4' type='video/mp4'>
-										</video>
-									</div>
-									<div class="tp-caption  tp-fade"
-										data-x="right"
-										data-y="bottom"
-										data-voffset="-60"
-										data-hoffset="-90"
-										data-speed="600"
-										data-start="900"
-										data-easing="Power4.easeOut"
-										data-endeasing="Power4.easeIn">
-										<div class="video-play">
-											<a class="icon-f-29 btn-play" href="#"></a>
-											<a class="icon-f-28 btn-pause" href="#"></a>
-										</div>
-									</div>
-									
-									<div class="tp-caption lfb lft text-center"
-										data-x="center"
-										data-y="center"
-										data-voffset="-20"
-										data-hoffset="0"
-										data-speed="600"
-										data-start="900"
-										data-easing="Power4.easeOut"
-										data-endeasing="Power4.easeIn">
-										<div class="tp-caption1-wd-1 tt-base-color">Oberlo</div>
-										<div class="tp-caption1-wd-2 tt-white-color">Find Products for<br>Shop Store</div>
-										<div class="tp-caption1-wd-3 tt-white-color">Oberlo allows you to easily import dropshipped products directly into your ecommerce store</div>
-										<div class="tp-caption1-wd-4"><a href="/products" target="_blank" class="btn btn-xl" data-text="Shop Now!">Mua sắm ngay!</a></div>
-									</div>
-								</li> -->
 											</ul>
 										</div>
 									</div>
@@ -205,9 +153,6 @@
 							</div>
 							<div class="row tt-layout-product-item">
 								<% trendings.forEach(function(prod) { %>
-
-
-
 									<div class="col-6 col-md-4 col-lg-3">
 										<div class="tt-product thumbprod-center">
 											<div class="tt-image-box">
@@ -215,12 +160,12 @@
 												<a href="/product/<%= prod._id %>">
 													<span class="tt-img"><img
 															src="/images/product/<%= prod.images[0] %>"
-															data-src="/images/product/<%= prod.images[0] %>"
-															alt="" class="loaded" data-was-processed="true"></span>
+															data-src="/images/product/<%= prod.images[0] %>" alt=""
+															class="loaded" data-was-processed="true"></span>
 													<span class="tt-img-roll-over"><img
 															src="/images/product/<%= prod.images[1] %>"
-															data-src="/images/product/<%= prod.images[1] %>"
-															alt="" class="loaded" data-was-processed="true"></span>
+															data-src="/images/product/<%= prod.images[1] %>" alt=""
+															class="loaded" data-was-processed="true"></span>
 												</a>
 											</div>
 											<div class="tt-description">
@@ -256,8 +201,6 @@
 											</div>
 										</div>
 									</div>
-
-
 									<div class="modal fade" id="modalAddToCartProduct<%= prod._id %>" tabindex="-1"
 										role="dialog" aria-label="myModalLabel" aria-hidden="true">
 										<div class="modal-dialog">
@@ -276,16 +219,11 @@
 														<button class="btn-link btn-close-popup"
 															data-dismiss="modal">Tiếp tục mua sắm</button>
 														<a href="/shopping_cart" class="btn-link">XEM GIỎ HÀNG</a>
-														<%if (typeof(user) !=='undefined' && user.isAuthenticated) { %>
+														<%if (typeof(user) !=='undefined' ) { %>
 															<a href="/add-order" class="btn">Chuyển đến thanh toán</a>
-															<% }else if(typeof(user)=='undefined' ){ %>
+															<% }else{ %>
 																<a href="/login" class="btn">Đăng nhập để thanh toán</a>
-
-																<% }else if(typeof(user) !=='undefined' &&
-																	!user.isAuthenticated){ %>
-																	<a href="/verify-email" class="btn">Kích hoạt email
-																		để thanh toán</a>
-																	<% } %>
+																<% } %>
 													</div>
 													<div class="tt-modal-addtocart desctope">
 														<div class="row">
@@ -321,19 +259,13 @@
 																	data-dismiss="modal">Tiếp tục mua sắm</a>
 																<a href="/shopping_cart" class="btn btn-border">Xem giỏ
 																	hàng</a>
-																<%if (typeof(user) !=='undefined' &&
-																	user.isAuthenticated) { %>
+																<%if (typeof(user) !=='undefined' ) { %>
 																	<a href="/add-order" class="btn">Chuyển đến thanh
 																		toán</a>
-																	<% }else if(typeof(user)=='undefined' ){ %>
+																	<% }else{ %>
 																		<a href="/login" class="btn">Đăng nhập để thanh
 																			toán</a>
-
-																		<% }else if(typeof(user) !=='undefined' &&
-																			!user.isAuthenticated){ %>
-																			<a href="/verify-email" class="btn">Kích
-																				hoạt email để thanh toán</a>
-																			<% } %>
+																		<% } %>
 															</div>
 														</div>
 													</div>
@@ -402,9 +334,6 @@
 							</div>
 							<div class="row tt-layout-product-item">
 								<% hots.forEach(function(prod) { %>
-
-
-
 									<div class="col-6 col-md-4 col-lg-3">
 										<div class="tt-product thumbprod-center">
 											<div class="tt-image-box">
@@ -412,12 +341,12 @@
 												<a href="/product/<%= prod._id %>">
 													<span class="tt-img"><img
 															src="/images/product/<%= prod.images[0] %>"
-															data-src="/images/product/<%= prod.images[0] %>"
-															alt="" class="loaded" data-was-processed="true"></span>
+															data-src="/images/product/<%= prod.images[0] %>" alt=""
+															class="loaded" data-was-processed="true"></span>
 													<span class="tt-img-roll-over"><img
 															src="/images/product/<%= prod.images[1] %>"
-															data-src="/images/product/<%= prod.images[1] %>"
-															alt="" class="loaded" data-was-processed="true"></span>
+															data-src="/images/product/<%= prod.images[1] %>" alt=""
+															class="loaded" data-was-processed="true"></span>
 												</a>
 											</div>
 											<div class="tt-description">
@@ -453,8 +382,6 @@
 											</div>
 										</div>
 									</div>
-
-
 									<div class="modal fade" id="modalAddToCartProduct<%= prod._id %>" tabindex="-1"
 										role="dialog" aria-label="myModalLabel" aria-hidden="true">
 										<div class="modal-dialog">
@@ -473,16 +400,11 @@
 														<button class="btn-link btn-close-popup"
 															data-dismiss="modal">Tiếp tục mua sắm</button>
 														<a href="/shopping_cart" class="btn-link">XEM GIỎ HÀNG</a>
-														<%if (typeof(user) !=='undefined' && user.isAuthenticated) { %>
+														<%if (typeof(user) !=='undefined' ) { %>
 															<a href="/add-order" class="btn">Chuyển đến thanh toán</a>
-															<% }else if(typeof(user)=='undefined' ){ %>
+															<% }else{ %>
 																<a href="/login" class="btn">Đăng nhập để thanh toán</a>
-
-																<% }else if(typeof(user) !=='undefined' &&
-																	!user.isAuthenticated){ %>
-																	<a href="/verify-email" class="btn">Kích hoạt email
-																		để thanh toán</a>
-																	<% } %>
+																<% } %>
 													</div>
 													<div class="tt-modal-addtocart desctope">
 														<div class="row">
@@ -518,19 +440,13 @@
 																	data-dismiss="modal">Tiếp tục mua sắm</a>
 																<a href="/shopping_cart" class="btn btn-border">Xem giỏ
 																	hàng</a>
-																<%if (typeof(user) !=='undefined' &&
-																	user.isAuthenticated) { %>
+																<%if (typeof(user) !=='undefined' ) { %>
 																	<a href="/add-order" class="btn">Chuyển đến thanh
 																		toán</a>
-																	<% }else if(typeof(user)=='undefined' ){ %>
+																	<% }else{ %>
 																		<a href="/login" class="btn">Đăng nhập để thanh
 																			toán</a>
-
-																		<% }else if(typeof(user) !=='undefined' &&
-																			!user.isAuthenticated){ %>
-																			<a href="/verify-email" class="btn">Kích
-																				hoạt email để thanh toán</a>
-																			<% } %>
+																		<% } %>
 															</div>
 														</div>
 													</div>
@@ -542,109 +458,6 @@
 							</div>
 						</div>
 					</div>
-					<!-- <div class="container-indent">
-		<div class="container">
-			<div class="tt-block-title">
-				<h2 class="tt-title">LATES FROM BLOG</h2>
-				<div class="tt-description">THE FRESHEST AND MOST EXCITING NEWS</div>
-			</div>
-			<div class="tt-blog-thumb-list">
-				<div class="row">
-					<div class="col-12 col-sm-6 col-md-6 col-lg-4">
-						<div class="tt-blog-thumb">
-							<div class="tt-img"><a href="blog-single-post.html" target="_blank"><img src="/images/loader.svg" data-src="/images/blog/blog-post-img-06.jpg" alt=""></a></div>
-							<div class="tt-title-description">
-								<div class="tt-background"></div>
-								<div class="tt-tag">
-									<a href="blog-single-post.html">FASHION</a>
-								</div>
-								<div class="tt-title">
-									<a href="blog-single-post.html">DOLORE EU FUGIATNULLA PARIATUR</a>
-								</div>
-								<p>
-									Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</p>
-								<div class="tt-meta">
-									<div class="tt-autor">
-										by <a href="#">ADRIAN</a> on January 14, 2017
-									</div>
-									<div class="tt-comments">
-										<a href="#"><i class="tt-icon icon-f-88"></i>7</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-md-6 col-lg-4">
-						<div class="tt-blog-thumb">
-							<div class="tt-img"><a href="blog-single-post.html" target="_blank"><img src="/images/loader.svg" data-src="/images/blog/blog-post-img-04.jpg" alt=""></a></div>
-							<div class="tt-title-description">
-								<div class="tt-background"></div>
-								<div class="tt-tag">
-									<a href="blog-single-post.html">FASHION</a>
-								</div>
-								<div class="tt-title">
-									<a href="blog-single-post.html">INCIDIDUNT UT LABORE ET DOLORE</a>
-								</div>
-								<p>
-									Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</p>
-								<div class="tt-meta">
-									<div class="tt-autor">
-										by <a href="#">ADRIAN</a> on January 14, 2017
-									</div>
-									<div class="tt-comments">
-										<a href="#"><i class="tt-icon icon-f-88"></i>7</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-md-6 col-lg-4">
-						<div class="tt-blog-thumb">
-							<div class="tt-img"><a href="blog-single-post.html" target="_blank"><img src="/images/loader.svg" data-src="/images/blog/blog-post-img-02.jpg" alt=""></a></div>
-							<div class="tt-title-description">
-								<div class="tt-background"></div>
-								<div class="tt-tag">
-									<a href="blog-single-post.html">FASHION</a>
-								</div>
-								<div class="tt-title">
-									<a href="blog-single-post.html">INCIDIDUNT UT LABORE ET DOLORE</a>
-								</div>
-								<p>
-									Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</p>
-								<div class="tt-meta">
-									<div class="tt-autor">
-										by <a href="#">ADRIAN</a> on January 14, 2017
-									</div>
-									<div class="tt-comments">
-										<a href="#"><i class="tt-icon icon-f-88"></i>7</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-					<!-- <div class="container-indent">
-		<div class="container-fluid">
-			<div class="tt-block-title">
-				<h2 class="tt-title"><a target="_blank" href="https://www.instagram.com/wokieeshop/">@ FOLLOW</a> US ON</h2>
-				<div class="tt-description">INSTAGRAM</div>
-			</div>
-			<div class="row">
-				<div id="instafeed" class="instafeed-fluid"
-					data-accessToken="8626857013.dd09515.0fcd8351c65140d48f5a340693af1c3f"
-					data-clientId="dd095157744c4bd0a67181fc4906e5b6"
-					data-userId="8626857013"
-					data-limitImg="6">
-				</div>
-			</div>
-		</div>
-	</div> -->
 					<div class="container-indent">
 						<div class="container">
 							<div class="row tt-services-listing">
@@ -695,9 +508,6 @@
 							<% include partials/modal-subscribegood %>
 
 								<% include partials/script %>
-
-
-
 	</body>
 
 </html>
